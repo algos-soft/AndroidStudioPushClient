@@ -157,7 +157,8 @@ public class PushClientApp extends Application{
         Notification notif = builder.build();
         notif.flags |= Notification.FLAG_INSISTENT;
         NotificationManager manager=(NotificationManager)instance.getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(0, notif);
+        int notifId=1;  // id della notifica, notifiche con lo stesso id sostituiscono le precedenti
+        manager.notify(notifId, notif);
 
         // dopo l'invio della notifica sveglio il device
         PowerManager pm = (PowerManager)instance.getSystemService(POWER_SERVICE);
